@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+//This Component Contains the UI of NavigationBar
 export default function Navbar() {
   return (
     <div>
@@ -21,6 +22,7 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
+          /*It's a button to Add a New Task*/
           <Link className="btn btn-outline-light" to="/addtask">
             Add Task
           </Link>
