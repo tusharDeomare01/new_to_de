@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-
+//In the BaseEntity ID Variable is Created and it's made Auto-incremented
 public class BaseEntity {
 
 	  @Id
