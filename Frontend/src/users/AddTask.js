@@ -2,8 +2,9 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+//In this Component user can Add the NewTask
 export default function AddTask() {
-  let navigate = useNavigate();
+  let navigate = useNavigate();  //It's used to navigate to the New Page.
 
   const [user, setUser] = useState({
     title: "",
@@ -11,7 +12,7 @@ export default function AddTask() {
     status: "",
   });
 
-  const { title, endDate, status } = user;
+  const { title, endDate, status } = user;    //Here the Object is created
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -20,9 +21,10 @@ export default function AddTask() {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:8080/task", user);
-     navigate("/");
+     navigate("/");  //Navigate to the HomePage
   };
 
+  //In the Return Statement it contain a Task which is used to add the Info of the Task(such as Title, EndDate and Status)
   return (
     <div className="container">
       <div className="row">
@@ -77,6 +79,7 @@ export default function AddTask() {
               onChange={event => onInputChange(event)}
               defaultValue={""}
               >
+                //<Option> tag represent dropDown List
                 <option>--select--</option>
                 <option>Active</option>
                 <option>Pending</option>
